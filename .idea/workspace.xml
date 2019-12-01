@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f96405ad-3e3f-4054-92f3-077f7ad96be3" name="Default Changelist" comment="" />
+    <list default="true" id="f96405ad-3e3f-4054-92f3-077f7ad96be3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/index/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TTTAI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TTTConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TTTController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/user/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/RequestUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/ttt.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/layout/ttt.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minigames.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Routes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tictactoe/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ViewUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ViewUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/minesweeper.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Routes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Routes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/layout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/layout/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tictactoe/TicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tictactoe/TicTacToe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/ViewUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/ViewUtil.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +40,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -26,8 +53,10 @@
   <component name="ProjectId" id="1UAolDCojmnKTuuPeonijg3Uc6Q" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -40,8 +69,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ericr\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\sheric\minesweeper\src\main\resources\layout" />
-      <recent name="C:\Users\ericr\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\sheric\minesweeper\src\main\WebApp" />
+      <recent name="C:\Users\ericr\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\sheric\minigames\src\main\resources\css" />
+      <recent name="C:\Users\ericr\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\sheric\minigames\src\main\resources\layout" />
+      <recent name="C:\Users\ericr\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\sheric\minigames\src\main\resources\public" />
+      <recent name="C:\Users\ericr\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\sheric\minigames\src\main\java" />
+      <recent name="C:\Users\ericr\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\sheric\minigames\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -64,53 +96,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="minigames" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="minigames" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Routes" />
@@ -129,10 +114,27 @@
       <updated>1574808909503</updated>
       <workItem from="1574808915328" duration="1346000" />
       <workItem from="1574819500887" duration="10618000" />
+      <workItem from="1574878030011" duration="10951000" />
+      <workItem from="1574954330968" duration="21723000" />
+      <workItem from="1575063355703" duration="23524000" />
+      <workItem from="1575146531176" duration="6937000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="ttt.css">
+    <title>TTT</title>
+</head>
+<body>
+<h1>Tic Tac Toe</h1>
+#set ($maxEdgeIndex = $numEdges - 1)
+#set ($evenBit = (1 - ($numEdges % 2)))
+#set ($half = $numEdges / 2)
+<table>
+    #foreach ($i in [0..$maxEdgeIndex])
+        <tr>
+            #foreach ($j in [0..$maxEdgeIndex])
+                #set ($class = "")
+                #if ($i > 0 && $i <= $half)
+                    #set ($class = "top $class")
+                #end
+                #if ($i >= $half && $i < $maxEdgeIndex)
+                    #set ($class = "bot $class")
+                #end
+                #if ($j > 0 && $j <= $half)
+                    #set ($class = "left $class")
+                #end
+                #if ($j >= $half && $j < $maxEdgeIndex)
+                    #set ($class = "right $class")
+                #end
+                #if ($tiles[$i][$j] == 0 && !$win)
+                    #set ($class = "val $class")
+                #end
+                #set ($val = $numEdges * $i + $j)
+                <td class="$class">
+                    #if ($tiles[$i][$j] == 1)
+                        <div class="x">X</div>
+                    #elseif ($tiles[$i][$j] == -1)
+                        <div class="o">O</div>
+                    #elseif (!$win)
+                        <form action="TTT" method="post">
+                            <button type="submit" name="tile" value="$val" class="btn-link"></button>
+                        </form>
+                    #end
+                </td>
+            #end
+        </tr>
+    #end
+</table>
+#if ($win)
+    <h2>Player $otherPlayer wins!</h2>
+#end
+#if ($draw)
+    <h2>Draw.</h2>
+#end
+</body>
+</html>
