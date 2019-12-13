@@ -2,29 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f96405ad-3e3f-4054-92f3-077f7ad96be3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/index/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TTTAI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TTTConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TTTController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/RequestUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/ttt.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/layout/ttt.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/UtilConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minigames.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Routes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tictactoe/TTTAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TTTAI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tictactoe/TTTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TTTController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tictactoe/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TicTacToe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/ViewUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ViewUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/RequestUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/RequestUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/ttt.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/ttt.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/layout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/minesweeper.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Routes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Routes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/ttt.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/ttt.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/layout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/layout/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tictactoe/TicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tictactoe/TicTacToe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/ViewUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/ViewUtil.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,8 +106,21 @@
       <workItem from="1574878030011" duration="10951000" />
       <workItem from="1574954330968" duration="21723000" />
       <workItem from="1575063355703" duration="23524000" />
-      <workItem from="1575146531176" duration="6937000" />
+      <workItem from="1575146531176" duration="8848000" />
+      <workItem from="1576185437802" duration="6351000" />
+      <workItem from="1576216832303" duration="1609000" />
+      <workItem from="1576240772763" duration="268000" />
+      <workItem from="1576241716844" duration="1501000" />
+      <workItem from="1576246129211" duration="960000" />
     </task>
+    <task id="LOCAL-00001" summary="ttt">
+      <created>1575233841324</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575233841324</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,5 +138,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ttt" />
+    <option name="LAST_COMMIT_MESSAGE" value="ttt" />
   </component>
 </project>

@@ -12,6 +12,10 @@ public class TTTAI {
         this.difficulty = difficulty;
     }
 
+    public boolean getPlayer() {
+        return this.player;
+    }
+
     private static int evalGame(TicTacToe game) {
         if (!game.checkWin()) {
             return 0;
@@ -88,5 +92,16 @@ public class TTTAI {
         }
         int randIndex = rand.nextInt(bestMoves.size());
         return bestMoves.get(randIndex);
+    }
+
+    public static void makeCPUMove(TicTacToe game) {
+        if (game.againstCPU() && !game.checkGameOver()) {
+            int[] cpuMove = game.getCPU().nextMove(game);
+            game.move(cpuMove[0], cpuMove[1]);
+        }
+    }
+
+    public void resetCPU() {
+        rand = new Random();
     }
 }

@@ -52,5 +52,8 @@
 #if ($draw)
     <h2>Draw.</h2>
 #end
+    <form action="TTT" method="post">
+        <button type="submit" name="reset" value="reset">Reset</button>
+    </form>
 </body>
 </html>

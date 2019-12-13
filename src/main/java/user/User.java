@@ -20,6 +20,10 @@ public class User {
         this.tttGame = new TicTacToe(edgeLength);
     }
 
+    public void createTTT(int edgeLength, boolean player, int difficulty) {
+        this.tttGame = new TicTacToe(edgeLength, player, difficulty);
+    }
+
     public TicTacToe getTttGame() {
         return this.tttGame;
     }

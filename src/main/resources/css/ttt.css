@@ -4,6 +4,9 @@ h1 {
 h2 {
     text-align: center;
 }
+button{
+    margin: 5px auto;
+}
 td {
     width: 100px;
     height: 100px;
@@ -13,11 +16,6 @@ td.val:hover {
 }
 html, body, form {
     height: 100%;
-}
-button {
-    border:none;
-    height:100%;
-    width:100%;
 }
 table {
     margin: 5px auto;
@@ -57,7 +55,9 @@ table {
     color:blue;
 }
 .btn-link {
-    border: none;
+    border:none;
+    height:100%;
+    width:100%;
     outline: none;
     background: none;
     cursor: default;

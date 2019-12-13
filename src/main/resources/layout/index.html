@@ -19,11 +19,23 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <p>Please select who to play against:</p>
+            <form action="/TTT" method="get">
                 <input type="radio" name="versus" value="local"> Local<br>
                 <input type="radio" id="cpu" name="versus" value="cpu"> CPU<br>
-
-            <p id="askDif"></p>
-
+                <br>
+                <input type="radio" name="diff" value="easy"> Easy<br>
+                <input type="radio" name="diff" value="med"> Medium<br>
+                <input type="radio" name="diff" value="hard"> Hard<br>
+                <br>
+                <p>What player do you want to be?</p>
+                <input type="radio" name="player" value="x"> X<br>
+                <input type="radio" name="player" value="o"> O<br>
+                <br>
+                <input type="radio" name="size" value="3"> 3x3<br>
+                <input type="radio" name="size" value="4"> 4x4<br>
+                <input type="radio" name="size" value="5"> 5x5<br>
+                <input type="submit" value="Submit">
+            </form>
         </div>
 
     </div>
@@ -47,7 +59,14 @@
             modal.style.display = "block";
         }
 
-        askDif.innerHTML = "Choose your difficulty";
+        $("input[type='radio']").change(function() {
+            if($(this).val()==="cpu") {
+                askDif.show();
+            }
+            else {
+                askDif.hide();
+            }
+        })
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {

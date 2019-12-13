@@ -1,23 +1,35 @@
 package tictactoe;
 
+import java.util.Arrays;
+
 import static tictactoe.TTTConstants.*;
 
-public class TicTacToe implements Cloneable {
+public class TicTacToe {
     int edgeLength;
     int numLines;
     int[][] board;
     int[] lines;
     int emptyCells;
     boolean player; // true for x, false for o
-    TTTAI CPU = new TTTAI(false, 1);
+    TTTAI CPU;
 
     public TicTacToe(int edgeLength) {
         this.edgeLength = edgeLength;
-        numLines = 2* edgeLength + 2;
+        numLines = 2 * edgeLength + 2;
         board = new int[edgeLength][edgeLength];
         lines = new int[numLines];
         player = true;
         emptyCells = edgeLength * edgeLength;
+    }
+
+    public TicTacToe(int edgeLength, boolean player, int difficulty) {
+        this.edgeLength = edgeLength;
+        numLines = 2 * edgeLength + 2;
+        board = new int[edgeLength][edgeLength];
+        lines = new int[numLines];
+        this.player = true;
+        emptyCells = edgeLength * edgeLength;
+        this.CPU = new TTTAI(player, difficulty);
     }
 
     public TicTacToe (TicTacToe toCopy) {
@@ -118,5 +130,16 @@ public class TicTacToe implements Cloneable {
 
     public boolean checkGameOver() {
         return this.checkWin() || this.checkDraw();
+    }
+
+    public void resetGame() {
+        int i;
+        for (i = 0; i < edgeLength; i++) {
+            Arrays.fill(board[i], 0);
+        }
+        Arrays.fill(lines, 0);
+        emptyCells = edgeLength * edgeLength;
+        player = true;
+        CPU.resetCPU();
     }
 }
