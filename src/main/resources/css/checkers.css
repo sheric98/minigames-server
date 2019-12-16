@@ -1,0 +1,89 @@
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+button{
+    margin: 5px auto;
+}
+td {
+    width: 100px;
+    height: 100px;
+}
+td.val:hover {
+    /*background-color:dimgray;*/
+}
+html, body, form {
+    height: 100%;
+}
+table {
+    margin: 5px auto;
+}
+.left {
+    border-left: 2px solid black;
+}
+.right {
+    border-right: 2px solid black;
+}
+.top {
+    border-top: 2px solid black;
+}
+.bot {
+    border-bottom: 2px solid black;
+}
+.vert {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+.hori {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.blackdot {
+    height: 80px;
+    width: 80px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    vertical-align: center;
+    left: 10px;
+}
+.blackking {
+    height: 80px;
+    width: 80px;
+    background-color: black;
+    border-radius: 50%;
+    border: 4px solid gold;
+    display: inline-block;
+    position: relative;
+    vertical-align: center;
+    left: 6px;
+}
+.reddot {
+    height: 80px;
+    width: 80px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    vertical-align: center;
+    left: 10px
+}
+.redking {
+    height: 80px;
+    width: 80px;
+    background-color: red;
+    border-radius: 50%;
+    border: 4px solid gold;
+    display: inline-block;
+    position: relative;
+    vertical-align: center;
+    left: 6px
+}
+.div1 {
+    border: none;
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="checkers.css">
+    <title>Checkers</title>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+            console.log("drag");
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var pieceId = ev.dataTransfer.getData("text");
+            var moveId = ev.target.id;
+
+            var form = document.createElement("form");
+            var el1 = document.createElement("input");
+            var el2 = document.createElement("input");
+
+            form.method = "POST";
+            form.action = "Checkers";
+
+            el1.name = "piece";
+            el1.value = pieceId;
+
+            el2.name = "move";
+            el2.value = moveId;
+
+            form.appendChild(el1);
+            form.appendChild(el2);
+            document.body.appendChild(form);
+
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+<h1>Checkers</h1>
+    #set ($maxM = $m - 1)
+    #set ($maxN = $n - 1)
+    #set ($evenBit = (1 - ($m % 2)))
+    #set ($halfM = $m / 2)
+    #set ($halfN = $n / 2)
+    #if ($player)
+        #set ($otherPlayer = "Red")
+    #else
+        #set ($otherPlayer = "Black")
+    #end
+<table>
+    #foreach ($i in [0..$maxM])
+        <tr>
+            #foreach ($j in [0..$maxN])
+                #set ($class = "")
+                #if ($i > 0 && $i <= $halfM)
+                    #set ($class = "top $class")
+                #end
+                #if ($i >= $halfM && $i < $maxM)
+                    #set ($class = "bot $class")
+                #end
+                #if ($j > 0 && $j <= $halfN)
+                    #set ($class = "left $class")
+                #end
+                #if ($j >= $halfN && $j < $maxN)
+                    #set ($class = "right $class")
+                #end
+                #if ($tiles[$i][$j] == 0)
+                    #set ($class = "val $class")
+                #end
+                #set ($val = $m * $i + $j)
+                <td class="$class">
+                    #if ($tiles[$i][$j] == 1)
+                        #if ($player && !$win)
+                            <span class="blackdot" draggable="true" ondragstart="drag(event)" id="$val"></span>
+                        #else
+                            <span class="blackdot" id="$val"></span>
+                        #end
+                    #elseif ($tiles[$i][$j] == -1)
+                        #if (!$player && !$win)
+                            <span class="reddot" draggable="true" ondragstart="drag(event)" id="$val"></span>
+                        #else
+                            <span class="reddot" id="$val"></span>
+                        #end
+                    #elseif ($tiles[$i][$j] == 2)
+                        #if ($player && !$win)
+                            <span class="blackking" draggable="true" ondragstart="drag(event)" id="$val"></span>
+                        #else
+                            <span class="blackking" id="$val"></span>
+                        #end
+                    #elseif ($tiles[$i][$j] == -2)
+                        #if (!$player && !$win)
+                            <span class="redking" draggable="true" ondragstart="drag(event)" id="$val"></span>
+                        #else
+                            <span class="redking" id="$val"></span>
+                        #end
+                    #else
+                        <div class="div1" ondrop="drop(event)" ondragover="allowDrop(event)" id="$val"></div>
+                    #end
+                </td>
+            #end
+        </tr>
+    #end
+</table>
+    #if ($win)
+    <h2>$otherPlayer wins!</h2>
+    #end
+</body>
+</html>

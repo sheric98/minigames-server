@@ -18,15 +18,13 @@ public class TTTController {
             if (againstCPU(req)) {
                 int difficulty = getDifficulty(req);
                 boolean cpuPlayer = getCPUPlayer(req);
-                createTTTGame(req, res, size, cpuPlayer, difficulty);
-                game = getTTTGame(req, res);
+                game = createTTTGame(req, res, size, cpuPlayer, difficulty);
                 if (cpuPlayer) {
                     TTTAI.makeCPUMove(game);
                 }
             }
             else {
-                createTTTGame(req, res, size);
-                game = getTTTGame(req, res);
+                game = createTTTGame(req, res, size);
             }
             Map<String, Object> model = TTTMap(game);
             return updateModel(model, templatePath);
@@ -64,15 +62,18 @@ public class TTTController {
         return user.getTttGame();
     }
 
-    private static void createTTTGame(Request req, Response res, int edgeLength, boolean player, int difficulty) {
+    private static TicTacToe createTTTGame(Request req, Response res, int edgeLength, boolean player, int difficulty) {
         User user = currentSessionUser(req, res);
         user.createTTT(edgeLength, player, difficulty);
+        return user.getTttGame();
     }
 
-    private static void createTTTGame(Request req, Response res, int edgeLength) {
+    private static TicTacToe createTTTGame(Request req, Response res, int edgeLength) {
         User user = currentSessionUser(req, res);
         user.createTTT(edgeLength);
+        return user.getTttGame();
     }
+
 
     private static Map<String, Object> TTTMap(TicTacToe game) {
         HashMap<String, Object> map = new HashMap<>();

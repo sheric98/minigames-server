@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f96405ad-3e3f-4054-92f3-077f7ad96be3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/UtilConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/checkers/Checkers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/checkers/CheckersConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/checkers/CheckersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/checkers.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/layout/checkers.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tictactoe/TTTAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TTTAI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Routes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tictactoe/TTTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TTTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tictactoe/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TicTacToe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/RequestUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/RequestUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/ttt.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/ttt.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/layout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/ttt.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/ttt.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Routes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Routes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/layout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/layout/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tictactoe/TicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tictactoe/TicTacToe.class" afterDir="false" />
     </list>
@@ -111,7 +113,11 @@
       <workItem from="1576216832303" duration="1609000" />
       <workItem from="1576240772763" duration="268000" />
       <workItem from="1576241716844" duration="1501000" />
-      <workItem from="1576246129211" duration="960000" />
+      <workItem from="1576246129211" duration="5333000" />
+      <workItem from="1576267196241" duration="7929000" />
+      <workItem from="1576356805162" duration="8214000" />
+      <workItem from="1576388957644" duration="1406000" />
+      <workItem from="1576421887660" duration="10204000" />
     </task>
     <task id="LOCAL-00001" summary="ttt">
       <created>1575233841324</created>
@@ -120,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575233841324</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ttt preliminary finished">
+      <created>1576247816047</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576247816047</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +154,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ttt" />
-    <option name="LAST_COMMIT_MESSAGE" value="ttt" />
+    <MESSAGE value="ttt preliminary finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="ttt preliminary finished" />
   </component>
 </project>

@@ -1,5 +1,6 @@
 package util;
 
+import checkers.Checkers;
 import database.Database;
 import spark.*;
 import tictactoe.TicTacToe;
@@ -13,6 +14,19 @@ public class RequestUtil {
         int i = tileNum / edgeLength;
         int j = tileNum % edgeLength;
         return new int[] {i, j};
+    }
+
+    public static Checkers.Move getMove(Request req, Checkers game) {
+        int pieceId = Integer.parseInt(req.queryParams("piece"));
+        int moveId = Integer.parseInt(req.queryParams("move"));
+        int edgeLength = game.getBoard().length;
+
+        int pieceX = pieceId / edgeLength;
+        int pieceY = pieceId % edgeLength;
+        int locX = moveId / edgeLength;
+        int locY = moveId % edgeLength;
+
+        return new Checkers.Move(pieceX, pieceY, locX, locY);
     }
 
     public static boolean againstCPU(Request req) {

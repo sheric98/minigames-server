@@ -1,3 +1,4 @@
+import static checkers.CheckersController.*;
 import static spark.Spark.*;
 import static tictactoe.TTTController.*;
 import static index.IndexController.*;
@@ -10,8 +11,14 @@ public class Routes {
         staticFiles.location("/css");
 
         get("/", handleIndexGet("layout/index.html"));
+
         get("/TTT", handleTTTGet("layout/ttt.vm"), new VelocityTemplateEngine());
         post("/TTT", handleTTTPost("layout/ttt.vm"), new VelocityTemplateEngine());
+
+        get("/Checkers", handleCheckersGet("layout/checkers.vm"),
+                new VelocityTemplateEngine());
+        post("/Checkers", handleCheckersPost("layout/checkers.vm"),
+                new VelocityTemplateEngine());
 
         get("/butt", (req, res) -> "don't go to this link");
     }
