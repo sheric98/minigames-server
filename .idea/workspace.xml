@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f96405ad-3e3f-4054-92f3-077f7ad96be3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/checkers/Checkers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/checkers/CheckersConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/checkers/CheckersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/checkers.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/layout/checkers.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/checkers/CheckersAI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/ServerUsersUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Routes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tictactoe/TTTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TTTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/checkers/Checkers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/checkers/Checkers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/checkers/CheckersConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/checkers/CheckersConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/checkers/CheckersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/checkers/CheckersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/index/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/index/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tictactoe/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tictactoe/TicTacToe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/RequestUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/RequestUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/UtilConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/UtilConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/checkers.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/checkers.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/layout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Routes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Routes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/layout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/layout/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tictactoe/TicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tictactoe/TicTacToe.class" afterDir="false" />
     </list>
@@ -54,6 +56,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -117,7 +120,17 @@
       <workItem from="1576267196241" duration="7929000" />
       <workItem from="1576356805162" duration="8214000" />
       <workItem from="1576388957644" duration="1406000" />
-      <workItem from="1576421887660" duration="10204000" />
+      <workItem from="1576421887660" duration="10242000" />
+      <workItem from="1576479622453" duration="13509000" />
+      <workItem from="1576564669840" duration="7500000" />
+      <workItem from="1576613347938" duration="696000" />
+      <workItem from="1576676965852" duration="3103000" />
+      <workItem from="1576693352309" duration="1305000" />
+      <workItem from="1576782477108" duration="3205000" />
+      <workItem from="1576798631968" duration="3567000" />
+      <workItem from="1576822457461" duration="5523000" />
+      <workItem from="1576959818590" duration="2061000" />
+      <workItem from="1577144869685" duration="4415000" />
     </task>
     <task id="LOCAL-00001" summary="ttt">
       <created>1575233841324</created>
@@ -133,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576247816047</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="checkers logic and basic board finished">
+      <created>1576473839179</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576473839179</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +175,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ttt" />
     <MESSAGE value="ttt preliminary finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="ttt preliminary finished" />
+    <MESSAGE value="checkers logic and basic board finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkers logic and basic board finished" />
   </component>
 </project>

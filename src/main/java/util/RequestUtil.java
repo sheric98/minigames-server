@@ -5,6 +5,7 @@ import database.Database;
 import spark.*;
 import tictactoe.TicTacToe;
 import static util.UtilConstants.*;
+import static util.ServerUsersUtil.*;
 import user.User;
 
 public class RequestUtil {
@@ -30,19 +31,23 @@ public class RequestUtil {
     }
 
     public static boolean againstCPU(Request req) {
-        return CPU.equals(req.queryParams("versus"));
+        String versus = req.queryParams("versus");
+        if (versus == null) {
+            return false;
+        }
+        return CPU.equals(versus);
     }
 
     public static int getDifficulty(Request req) {
         String diff = req.queryParams("diff");
         if (diff.equals(EASY)) {
-            return 1;
+            return EASY_DIF;
         }
         if (diff.equals(MEDIUM)) {
-            return 3;
+            return MED_DIF;
         }
         if (diff.equals(HARD)) {
-            return 5;
+            return HARD_DIF;
         }
         return -1;
     }
@@ -56,18 +61,33 @@ public class RequestUtil {
     }
 
     public static int getSize(Request req) {
+        String size = req.queryParams("size");
+        if (size == null) {
+            return DEFAULT_SIZE;
+        }
         return Integer.parseInt(req.queryParams("size"));
     }
 
     public static User currentSessionUser(Request req, Response res) {
+        User user;
         String idStr = req.cookie("id");
+//        Session session = req.session(true);
+//        System.out.println("in currentSessionUser");
+//        System.out.println(session);
         Database db = Database.getGlobalDB();
-        if (idStr == null) {
-            User user = new User(db);
-            res.cookie("id", Long.toString(user.getId()));
+        if (idStr == null || idStr.length() == 0) {
+            user = createUser(req, res);
+            System.out.println("no id");
             return user;
         }
         long id = Long.parseLong(idStr);
-        return db.getUser(id);
+        System.out.println("got user " + id);
+        if (db.hasId(id)) {
+            user = db.getUser(id);
+        }
+        else {
+            user = createUser(req, id);
+        }
+        return user;
     }
 }

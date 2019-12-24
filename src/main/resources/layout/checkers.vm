@@ -109,5 +109,8 @@
     #if ($win)
     <h2>$otherPlayer wins!</h2>
     #end
+<form action="Checkers" method="post">
+    <button type="submit" name="reset" value="reset">Reset</button>
+</form>
 </body>
 </html>

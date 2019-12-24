@@ -2,20 +2,33 @@ package user;
 
 import checkers.Checkers;
 import database.Database;
+import spark.Session;
 import tictactoe.TicTacToe;
 
 public class User {
     long id;
+    Session session;
     TicTacToe tttGame = null;
     Checkers checkers = null;
 
-    public User (Database db) {
+    public User (Database db, Session session) {
         this.id = db.generateKey();
+        this.session = session;
+        db.addUser(this);
+    }
+
+    public User (Database db, Session session, Long id) {
+        this.id = id;
+        this.session = session;
         db.addUser(this);
     }
 
     public long getId() {
         return this.id;
+    }
+
+    public Session getSession() {
+        return this.session;
     }
 
     public void createTTT(int edgeLength) {
@@ -32,6 +45,10 @@ public class User {
 
     public void createCheckers() {
         this.checkers = new Checkers();
+    }
+
+    public void createCheckers(boolean player, int difficulty) {
+        this.checkers = new Checkers(player, difficulty);
     }
 
     public Checkers getCheckers() {

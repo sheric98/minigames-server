@@ -140,6 +140,8 @@ public class TicTacToe {
         Arrays.fill(lines, 0);
         emptyCells = edgeLength * edgeLength;
         player = true;
-        CPU.resetCPU();
+        if (CPU != null) {
+            CPU.resetCPU();
+        }
     }
 }

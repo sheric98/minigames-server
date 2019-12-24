@@ -1,5 +1,7 @@
 package checkers;
 
+import java.util.*;
+
 import static checkers.CheckersConstants.*;
 
 public class Checkers {
@@ -8,9 +10,37 @@ public class Checkers {
     boolean player = true; // black goes first
     int blackPieces = 3 * NUM_COLS / 2;
     int whitePieces = 3 * NUM_COLS / 2;
+    int blackKings = 0;
+    int whiteKings = 0;
+    List<Move> validMoves = new LinkedList<>();
+    CheckersAI CPU;
 
     public Checkers() {
         defaultStart(this.board);
+        CPU = null;
+    }
+
+    public Checkers(boolean player, int difficulty) {
+        defaultStart(this.board);
+        CPU = new CheckersAI(player, difficulty);
+    }
+
+    public Checkers cloneGame() {
+        Checkers ret = new Checkers();
+        for (int i = 0; i < NUM_ROWS; i++) {
+            for (int j = 0; j < NUM_COLS; j++) {
+                ret.board[i][j] = this.board[i][j];
+            }
+        }
+        ret.player = this.player;
+        ret.blackPieces = this.blackPieces;
+        ret.whitePieces = this.whitePieces;
+        ret.blackKings = this.blackKings;
+        ret.whiteKings = this.whiteKings;
+        for (Move move : this.validMoves) {
+            ret.validMoves.add(move);
+        }
+        return ret;
     }
 
     public static class Move {
@@ -47,11 +77,29 @@ public class Checkers {
         return this.player;
     }
 
+    public CheckersAI getCPU() {
+        return this.CPU;
+    }
+
+    public boolean againstCPU() {
+        return this.CPU != null;
+    }
+
     public boolean checkValid(Move move) {
         int i = move.getPieceX();
         int j = move.getPieceY();
         int x = move.getLocationX();
         int y = move.getLocationY();
+
+        if (validMoves.size() > 0) {
+            for (Move validMove : validMoves) {
+                if (coordsEquals(move.piece, validMove.piece) &&
+                coordsEquals(move.location, validMove.location)) {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         int playerInt = player ? 1 : -1;
 
@@ -79,6 +127,29 @@ public class Checkers {
         return false;
     }
 
+    public List<Move> validMovesForPiece(int[] piece) {
+        int i = piece[0];
+        int j = piece[1];
+        int playerInt = player ? 1 : -1;
+        List<Move> ret = new LinkedList<>();
+
+        if (board[i][j] * playerInt <= 0 ) { // invalid piece to move
+            return ret;
+        }
+
+        for (int[] dir : DIRS) {
+            if (validDir(piece, dir)) {
+                if (checkDirForPiece(piece, dir, EMPTY)) {
+                    ret.add(new Move(i, j, i + dir[0], j + dir[1]));
+                }
+                else if (hasJumpInDir(piece, dir)) {
+                    ret.add(new Move(i, j, i + 2*dir[0], j + 2*dir[1]));
+                }
+            }
+        }
+        return ret;
+    }
+
     public boolean checkDirForPiece(int[] cur, int[] dir, int piece) {
         int x = cur[0] + dir[0];
         int y = cur[1] + dir[1];
@@ -94,6 +165,13 @@ public class Checkers {
         int j = move.getPieceY();
         int x = move.getLocationX();
         int y = move.getLocationY();
+        int playerInt = player ? 1 : -1;
+
+//        System.out.println(playerInt + " " + i + " " + j + " " + x + " " + y);
+
+        if (validMoves.size() > 0) {
+            validMoves.clear();
+        }
 
         checkKing(move);
 
@@ -108,6 +186,12 @@ public class Checkers {
         }
     }
 
+    public void applyChain(List<Move> chain) {
+        for (Move move : chain) {
+            makeMove(move);
+        }
+    }
+
     public void checkKing(Move move) {
         int i = move.getPieceX();
         int j = move.getPieceY();
@@ -118,6 +202,12 @@ public class Checkers {
         int kingPiece = playerInt * KING;
         if (x == kingRow) {
             board[i][j] = kingPiece;
+            if (player) {
+                blackKings++;
+            }
+            else {
+                whiteKings++;
+            }
         }
     }
 
@@ -130,14 +220,20 @@ public class Checkers {
         int dirX = (x - i) / 2;
         int dirY = (y - j) / 2;
 
-        board[i + dirX][j + dirY] = EMPTY;
-
         if (player) {
             whitePieces--;
+            if (isKing(i + dirX, j + dirY)) {
+                whiteKings--;
+            }
         }
         else {
             blackPieces--;
+            if (isKing(i + dirX, j + dirY)) {
+                blackKings--;
+            }
         }
+
+        board[i + dirX][j + dirY] = EMPTY;
 
         if (!anotherJump(move)) {
             player = !player;
@@ -152,13 +248,24 @@ public class Checkers {
 
         for (int[] dir : DIRS) {
             if (validDir(move.location, dir)) {
-                if (checkDirForPiece(move.location, dir, otherPlayer)) {
-                    int[] halfJump = {x + dir[0], y + dir[1]};
-                    int[] jumpLoc = {x + 2*dir[0], y + 2*dir[1]};
-                    if (inBounds(jumpLoc) && checkDirForPiece(halfJump, dir, EMPTY)) {
-                        return true;
-                    }
+                if (hasJumpInDir(move.location, dir)) {
+                    validMoves.add(new Move(x, y, x + 2*dir[0], y + 2*dir[1]));
                 }
+            }
+        }
+        return validMoves.size() > 0;
+    }
+
+    public boolean hasJumpInDir(int[] loc, int[] dir) {
+        int x = loc[0];
+        int y = loc[1];
+        int otherPlayer = player ? -1 : 1;
+
+        if (checkDirForPiece(loc, dir, otherPlayer)) {
+            int[] halfJump = {x + dir[0], y + dir[1]};
+            int[] jumpLoc = {x + 2*dir[0], y + 2*dir[1]};
+            if (inBounds(jumpLoc) && checkDirForPiece(halfJump, dir, EMPTY)) {
+                return true;
             }
         }
         return false;
@@ -217,6 +324,19 @@ public class Checkers {
                     board[i][j] = EMPTY;
                 }
             }
+        }
+    }
+
+    public void resetGame() {
+        defaultStart(board);
+        player = true;
+        blackPieces = 3 * NUM_COLS / 2;
+        whitePieces = 3 * NUM_COLS / 2;
+        blackKings = 0;
+        whiteKings = 0;
+        validMoves = new LinkedList<>();
+        if (CPU != null) {
+            CPU.resetCPU();
         }
     }
 }

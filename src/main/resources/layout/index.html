@@ -11,32 +11,62 @@
 <!--        <button type="submit">Tic-Tac-Toe</button>-->
 <!--    </form>-->
     <button id="TTT">Tic-Tac-Toe</button>
-    <form action="Checkers" method="get">
-        <button type="submit">Checkers</button>
-    </form>
+    <button id="Checkers">Checkers</button>
 
     <!-- The Modal -->
     <div id="TTTModal" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span id="close">&times;</span>
             <p>Please select who to play against:</p>
             <form action="/TTT" method="get">
-                <input type="radio" name="versus" value="local"> Local<br>
-                <input type="radio" id="cpu" name="versus" value="cpu"> CPU<br>
+                <input type="radio" name="versus" onclick="ShowHideDiv()" value="local"> Local<br>
+                <input type="radio" id="cpu" name="versus" onclick="ShowHideDiv()" value="cpu"> CPU<br>
                 <br>
-                <input type="radio" name="diff" value="easy"> Easy<br>
-                <input type="radio" name="diff" value="med"> Medium<br>
-                <input type="radio" name="diff" value="hard"> Hard<br>
-                <br>
-                <p>What player do you want to be?</p>
-                <input type="radio" name="player" value="x"> X<br>
-                <input type="radio" name="player" value="o"> O<br>
-                <br>
+                <div id="diffDiv" style="display: none">
+                    <p>Select CPU Difficulty:</p>
+                    <input type="radio" name="diff" value="easy"> Easy<br>
+                    <input type="radio" name="diff" value="med"> Medium<br>
+                    <input type="radio" name="diff" value="hard"> Hard<br>
+                    <br>
+                    <p>What player do you want to be?</p>
+                    <input type="radio" name="player" value="x"> X<br>
+                    <input type="radio" name="player" value="o"> O<br>
+                    <br>
+                </div>
+                <p>What board size would you like?</p>
                 <input type="radio" name="size" value="3"> 3x3<br>
                 <input type="radio" name="size" value="4"> 4x4<br>
                 <input type="radio" name="size" value="5"> 5x5<br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Checkers Modal -->
+    <div id="CheckersModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="checkersClose">&times;</span>
+            <p>Please select who to play against:</p>
+            <form action="/Checkers" method="get">
+                <input type="radio" name="versus" onclick="showCheckers()" value="local"> Local<br>
+                <input type="radio" id="CheckersCpu" name="versus" onclick="showCheckers()" value="cpu"> CPU<br>
+                <br>
+                <div id="CheckersDiffDiv" style="display: none">
+                    <p>Select CPU Difficulty:</p>
+                    <input type="radio" name="diff" value="easy"> Easy<br>
+                    <input type="radio" name="diff" value="med"> Medium<br>
+                    <input type="radio" name="diff" value="hard"> Hard<br>
+                    <br>
+                    <p>What player do you want to be?</p>
+                    <input type="radio" name="player" value="x"> Black<br>
+                    <input type="radio" name="player" value="o"> Red<br>
+                    <br>
+                </div>
                 <input type="submit" value="Submit">
             </form>
         </div>
@@ -47,39 +77,59 @@
         // Get the modal
         var modal = document.getElementById("TTTModal");
 
+        var checkersmodal = document.getElementById("CheckersModal");
+
         // Get the button that opens the modal
         var btn = document.getElementById("TTT");
 
+        var checkersbtn = document.getElementById("Checkers");
+
         // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+        var span = document.getElementById("close");
+
+        var checkersclose = document.getElementById("checkersClose");
 
         var cpu = document.getElementById("cpu");
 
-        var askDif = document.getElementById("askDif");
+        var checkerscpu = document.getElementById("CheckersCpu");
+
+        var askDif = document.getElementById("diffDiv");
+
+        var checkersdif = document.getElementById("CheckersDiffDiv");
+
+        function ShowHideDiv() {
+            askDif.style.display = cpu.checked ? "block" : "none";
+        }
+
+        function showCheckers() {
+            checkersdif.style.display = checkerscpu.checked ? "block" : "none";
+        }
 
         // When the user clicks the button, open the modal
         btn.onclick = function() {
             modal.style.display = "block";
         }
 
-        $("input[type='radio']").change(function() {
-            if($(this).val()==="cpu") {
-                askDif.show();
-            }
-            else {
-                askDif.hide();
-            }
-        })
+        checkersbtn.onclick = function() {
+            checkersmodal.style.display = "block";
+        }
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
             modal.style.display = "none";
         }
 
+        checkersclose.onclick = function() {
+            checkersmodal.style.display = "none";
+        }
+
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+            }
+            if (event.target == checkersmodal) {
+                checkersmodal.style.display = "none";
             }
         }
     </script>

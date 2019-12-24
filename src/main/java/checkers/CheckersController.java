@@ -3,20 +3,29 @@ package checkers;
 import spark.Request;
 import spark.Response;
 import spark.TemplateViewRoute;
-import tictactoe.TicTacToe;
 import user.User;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static util.RequestUtil.*;
-import static util.RequestUtil.getCPUPlayer;
 import static util.ViewUtil.updateModel;
 
 public class CheckersController {
     public static TemplateViewRoute handleCheckersGet(String templatePath) {
         return (Request req, Response res) -> {
-            Checkers game = createCheckers(req, res);
+            Checkers game;
+            if (againstCPU(req)) {
+                int difficulty = getDifficulty(req);
+                boolean cpuPlayer = getCPUPlayer(req);
+                game = createCheckers(req, res, cpuPlayer, difficulty);
+                if (cpuPlayer) {
+                    CheckersAI.makeCPUMove(game);
+                }
+            }
+            else {
+                game = createCheckers(req, res);
+            }
             Map<String, Object> model = CheckersMap(game);
             return updateModel(model, templatePath);
         };
@@ -25,11 +34,19 @@ public class CheckersController {
     public static TemplateViewRoute handleCheckersPost(String templatePath) {
         return (Request req, Response res) -> {
             Checkers game = getCheckers(req, res);
-            Checkers.Move move = getMove(req, game);
-            if (game.checkValid(move)) {
-                game.makeMove(move);
+            if (checkReset(req)) {
+                game.resetGame();
+                if (game.againstCPU() && game.CPU.player) {
+                    CheckersAI.makeCPUMove(game);
+                }
             }
-
+            else {
+                Checkers.Move move = getMove(req, game);
+                if (game.checkValid(move)) {
+                    game.makeMove(move);
+                    CheckersAI.makeCPUMove(game);
+                }
+            }
             Map<String, Object> model = CheckersMap(game);
             return updateModel(model, templatePath);
         };
@@ -38,6 +55,12 @@ public class CheckersController {
     private static Checkers createCheckers(Request req, Response res) {
         User user = currentSessionUser(req, res);
         user.createCheckers();
+        return user.getCheckers();
+    }
+
+    private static Checkers createCheckers(Request req, Response res, boolean player, int difficulty) {
+        User user = currentSessionUser(req, res);
+        user.createCheckers(player, difficulty);
         return user.getCheckers();
     }
 
