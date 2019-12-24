@@ -115,7 +115,7 @@ public class Checkers {
                 if (coordsEquals(move.location, loc)) {
                     return true;
                 }
-                if (checkDirForPiece(move.piece, dir, -1*playerInt)) {
+                if (hasJumpInDir(move.piece, dir)) {
                     int[] jumpLoc = {i + 2*dir[0], j + 2*dir[1]};
                     if (coordsEquals(move.location, jumpLoc)) {
                         return true;

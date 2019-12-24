@@ -77,11 +77,9 @@ public class RequestUtil {
         Database db = Database.getGlobalDB();
         if (idStr == null || idStr.length() == 0) {
             user = createUser(req, res);
-            System.out.println("no id");
             return user;
         }
         long id = Long.parseLong(idStr);
-        System.out.println("got user " + id);
         if (db.hasId(id)) {
             user = db.getUser(id);
         }
