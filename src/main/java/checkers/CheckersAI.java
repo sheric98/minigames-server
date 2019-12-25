@@ -142,7 +142,7 @@ public class CheckersAI {
     }
 
     public static void makeCPUMove(Checkers game) {
-        if (game.againstCPU() && !game.checkWin()) {
+        if (game.againstCPU() && game.isCPUTurn() && !game.checkWin()) {
             List<Checkers.Move> cpuMove = game.getCPU().nextMove(game);
             game.applyChain(cpuMove);
         }

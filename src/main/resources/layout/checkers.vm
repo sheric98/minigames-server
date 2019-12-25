@@ -19,6 +19,8 @@
             var pieceId = ev.dataTransfer.getData("text");
             var moveId = ev.target.id;
 
+            ev.dataTransfer.clearData("text");
+
             var form = document.createElement("form");
             var el1 = document.createElement("input");
             var el2 = document.createElement("input");

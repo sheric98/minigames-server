@@ -69,7 +69,7 @@ table {
     display: inline-block;
     position: relative;
     vertical-align: center;
-    left: 10px
+    left: 10px;
 }
 .redking {
     height: 80px;
@@ -80,7 +80,7 @@ table {
     display: inline-block;
     position: relative;
     vertical-align: center;
-    left: 6px
+    left: 6px;
 }
 .div1 {
     border: none;

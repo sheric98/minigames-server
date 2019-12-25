@@ -301,6 +301,10 @@ public class Checkers {
         return (a[0] == b[0] && a[1] == b[1]);
     }
 
+    public boolean isCPUTurn() {
+        return this.player == CPU.player;
+    }
+
     public boolean checkWin() {
         return (blackPieces == 0 || whitePieces == 0);
     }

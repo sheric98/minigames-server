@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f96405ad-3e3f-4054-92f3-077f7ad96be3" name="Default Changelist" comment="checkers ai done?">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="f96405ad-3e3f-4054-92f3-077f7ad96be3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/checkers/Checkers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/checkers/Checkers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/RequestUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/RequestUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/ServerUsersUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ServerUsersUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/checkers/CheckersAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/checkers/CheckersAI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/checkers/CheckersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/checkers/CheckersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/checkers.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/checkers.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layout/checkers.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout/checkers.vm" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +122,8 @@
       <workItem from="1576959818590" duration="2061000" />
       <workItem from="1577144869685" duration="5048000" />
       <workItem from="1577198412287" duration="1958000" />
-      <workItem from="1577210102361" duration="1544000" />
+      <workItem from="1577210102361" duration="1716000" />
+      <workItem from="1577231864900" duration="1518000" />
     </task>
     <task id="LOCAL-00001" summary="ttt">
       <created>1575233841324</created>
@@ -152,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577149387499</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed pom">
+      <created>1577211701676</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1577211701676</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +184,7 @@
     <MESSAGE value="ttt preliminary finished" />
     <MESSAGE value="checkers logic and basic board finished" />
     <MESSAGE value="checkers ai done?" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkers ai done?" />
+    <MESSAGE value="fixed pom" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed pom" />
   </component>
 </project>
